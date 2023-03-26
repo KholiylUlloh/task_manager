@@ -13,8 +13,6 @@ const CreateWorkSpcWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   width: 400px;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Noto Sans,
-    Ubuntu, Droid Sans, Helvetica Neue, sans-serif;
   h2 {
     font-size: 26px;
   }

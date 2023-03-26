@@ -2,12 +2,20 @@ import React, { useState } from "react";
 import { CreateWorkSpcWrapper, Wrap } from "./main.style";
 import { HiArrowRight } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { workspace } from "../../utils/workspaces";
 
 const Main = () => {
   const [value, setValue] = useState("");
   const onInputChange = (e) => {
-    setValue((prevValue) => (prevValue = e.target.value));
+    e.preventDefault();
+    setValue(e.target.value);
   };
+
+  const addWorkspace = () => {
+    workspace.push({ workspace: value });
+  };
+
+
   return (
     <Wrap>
       <img
@@ -31,7 +39,7 @@ const Main = () => {
           type="text"
           placeholder="Create a Workspace"
         />
-        <Link to={`/workspace:${value}`} className="btn">
+        <Link onClick={addWorkspace} to={`/:${value}`} className="btn">
           Create Workspace <HiArrowRight size={20} />
         </Link>
       </CreateWorkSpcWrapper>
